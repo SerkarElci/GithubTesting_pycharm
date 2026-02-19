@@ -17,6 +17,10 @@ GRAVITY = 9.81
 PIXELS_PER_METER = 180
 DAMPING = 0.998
 
+    @property
+    def bob_weight_newtons(self):
+        return self.mass * GRAVITY
+
 # Requested pendulum settings
 BALL_MASS = 3.0  # kg
 ROD_LENGTH = 1.7  # meters
@@ -102,3 +106,4 @@ while running:
 
 pygame.quit()
 sys.exit()
+            f"Ball weight: {self.pendulum.bob_weight_newtons:.1f} N",
